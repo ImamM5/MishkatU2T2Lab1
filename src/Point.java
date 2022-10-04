@@ -42,32 +42,32 @@ public class Point
 
     public String coordinate()
     {
-        return "(5, 8)";
+        return "("+x +", "+ y +")";
     }
 
-    public boolean quadrant()
+    public String quadrant()
     {
         String quadrant;
-        if (x < 0 && y < 0)
+        if (x > 0 && y > 0)
         {
             quadrant = "I";
-        } else if (x > 0 && y < 0)
-        {
-            quadrant = "II";
-        } else if (x > 0 && y > 0)
-        {
-             quadrant = "III";
         } else if (x < 0 && y > 0)
         {
-            String quadrant = "IV";
+            quadrant = "II";
+        } else if (x < 0 && y < 0)
+        {
+            quadrant = "III";
+        } else if (x > 0 && y < 0)
+        {
+            quadrant = "IV";
         } else if (x == 0 && y == 0)
         {
-            return "origin";
-        } else if ((x == 0 && ((y > 0) || (y < 0)) || ((x > 0) || (x < 0)) && y ==0))
+            quadrant = "origin";
+        } else //if ((x == 0 && ((y > 0) || (y < 0)) || ((x > 0) || (x < 0)) && y ==0))
         {
-            return "on an axis";
+            quadrant = "on an axis";
         }
-
+        return quadrant;
     }
 
 }
